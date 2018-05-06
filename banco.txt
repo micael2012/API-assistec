@@ -1,0 +1,7 @@
+banco assistec
+
+tabela user
+id auto_increment
+email varchar 255
+pass varchar
+token varchar 255
