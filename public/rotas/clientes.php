@@ -33,7 +33,7 @@ $app->get('/api/clientes', function(Request $request, Response $response){
 });
 
 
-$app->get('/api/cadcliente', function(Request $request, Response $response){
+$app->post('/api/cadcliente', function(Request $request, Response $response){
 
 	$nome  = $request->getParam('nome');
 	$senha = $request->getParam('senha');
@@ -55,13 +55,7 @@ $consulta = 'INSERT INTO usuario (nome,senha,token) VALUES(:nome, :senha, :token
 		$stmt->bindParam(':token', $token);
 		$stmt->execute();
 
-		echo '{"notice": {"text": "Cliente Cadastrado"}}'
-
-
-
-		echo json_encode($clientes);
-
-
+		echo '{"notice": {"text": "Cliente Cadastrado"}';
 
 	} catch (PDOException $e) {
 		echo '{"error": {"text": '.$e->getMessage().'}';
