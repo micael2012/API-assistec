@@ -2,9 +2,9 @@
     class db{
         // Variables de conexión
        private $host = 'mysql762.umbler.com';
-       private $usuario = 'root';
-        private $password = '';
-        private $base = 'test';
+       private $usuario = 'micael';
+        private $password = '22setembro';
+        private $base = 'assistec';
         
 
         // Conectar a BD
