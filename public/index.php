@@ -7,7 +7,7 @@ require 'db.php';
 
 $app = new \Slim\App;
 	
-$db = new db;
+
 
 $app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
     $name = $args['name'];

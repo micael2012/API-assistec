@@ -8,6 +8,8 @@
 
 
 		public function conectar(){
+			
+
 			$conexao_mysql = "mysql:host=$this->host;dbname=$this->db";
 			$conexaoDB = new PDO($conexao_mysql, $this->user, $this->pass);
 			$conexaoDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
