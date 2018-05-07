@@ -18,16 +18,4 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
 
 require "rotas/clientes.php";
 
-
-function response($status_code , $response){
-
-	$app = \Slim\Slim::getInstance();
-	$app->status($status_code);
-	$app->mime_content_type("application/json");
-	echo json_encode($response);
-	
-}
-
-
-
 $app->run();
