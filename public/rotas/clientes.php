@@ -9,11 +9,12 @@ $app =  new \Slim\App;
 
 $app->get('/api/clientes', function(Request $request, Response $response){
 
-	$consulta = 'SELECT * FROM usuario';
 
 
-		
+
 	try {
+		
+	$consulta = 'SELECT * FROM usuario';
 		$db = new db();
 
 		$db = $db->conectar();
