@@ -7,7 +7,7 @@ $app =  new \Slim\App;
 
 //Listar todos os clientes
 
-$app->get('/api/	clientes', function(Request $request, Response $response){
+$app->get('/api/clientes', function(Request $request, Response $response){
 
 	$consulta = 'SELECT * FROM usuario';
 
@@ -23,7 +23,7 @@ $app->get('/api/	clientes', function(Request $request, Response $response){
 
 	} catch (PDOException $e) {
 		echo '{"error": {"text": '.$e->getMessage().'}';
-		
+
 	}
 
 });
