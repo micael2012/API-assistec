@@ -3,10 +3,10 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
-require 'rotas/db.php';
+require 'db.php';
 
 $app = new \Slim\App;
-
+	
 $db = new db;
 
 $app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
