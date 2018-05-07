@@ -9,10 +9,22 @@ $app =  new \Slim\App;
 
 $app->get('/api/clientes', function(Request $request, Response $response){
 
-echo "teste ok com class ckientes";
+	$consulta = 'SELECT * FROM usuario';
+
+	try {
+		$db = new db();
+			
+		$db = $db->conectar();
+		$executar = $db->query($consulta);
+		$clientes = $executar->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+		echo json_encode($clientes);
 
 
 
-	
+	} catch (PDOException $e) {
+		echo '{"error": {"text": '.$e->getMessage().'}';
+
+	}
 
 });
