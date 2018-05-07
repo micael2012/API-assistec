@@ -2,7 +2,7 @@
 
 	class db{
 		private $HOST = 'localhost';
-a		private $USER = 'micael';
+		private $USER = 'micael';
 		private $PASS =	'22setembro';
 		private $DB   =	'assistec';
 
