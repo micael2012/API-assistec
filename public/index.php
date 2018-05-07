@@ -16,7 +16,7 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
     return $response;
 });
 
-require "clientes.php";
+require "rotas/clientes.php";
 
 
 function response($status_code , $response){
