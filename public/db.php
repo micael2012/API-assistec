@@ -1,7 +1,7 @@
 <?php
 
 	class db{
-		private $host = 'localhost';
+		private $host = 'mysql762.umbler.com';
 		private $user = 'micael';
 		private $pass =	'22setembro';
 		private $db   =	'assistec';
