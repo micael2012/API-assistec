@@ -13,9 +13,6 @@ echo "teste ok com class ckientes";
 
 
 
-	} catch (PDOException $e) {
-		echo '{"error": {"text": '.$e->getMessage().'}';
-
-	}
+	
 
 });
