@@ -8,15 +8,19 @@
 
 
 		public function conectar(){
+			try {
 			
+				$conexao_mysql = "mysql:host=$this->host;dbname=$this->db";
+				$conexaoDB = new PDO($conexao_mysql, $this->user, $this->pass);
 
-			$conexao_mysql = "mysql:host=$this->host;dbname=$this->db";
-			$conexaoDB = new PDO($conexao_mysql, $this->user, $this->pass);
-			$conexaoDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			} catch (PDOException $e) {
+				
+				echo 'Erro ao conectar com o MySQL: ' . $e->getMessage();
+			
+			}
 
-
-			$conexaoDB->exec("set names utf8");
-
+			
+				
 		}
 
 		//private function __construct(){
