@@ -9,15 +9,7 @@ $app =  new \Slim\App;
 
 $app->get('/api/clientes', function(Request $request, Response $response){
 
-	$consulta = 'SELECT * FROM usuario';
-
-	try {
-		$db = new db();
-		$db = $db->conectar();
-		$executar = $db->query($consulta);
-		$clientes = $executar->fetchAll(PDO::FETCH_OBJ);
-		$db = null;
-		echo json_encode($clientes);
+echo "teste ok com class ckientes";
 
 
 
