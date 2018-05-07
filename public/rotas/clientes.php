@@ -9,18 +9,24 @@ $app =  new \Slim\App;
 
 $app->get('/api/clientes', function(Request $request, Response $response){
 
-	$sql = 'SELECT * FROM usuario';
+	$consulta = 'SELECT * FROM usuario';
 
 
-	
-	$result = $PDO->query( $sql );
-	$rows = $result->fetchAll();
+		
+	try {
+		$db = new db();
 
-	print_r( $rows );
+		$db = $db->conectar();
+		$executar = $db->query($consulta);
+		$clientes = $executar->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+		echo json_encode($clientes);
 
 
 
+	} catch (PDOException $e) {
+		echo '{"error": {"text": '.$e->getMessage().'}';
 
-	
+	}
 
 });
