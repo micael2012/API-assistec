@@ -1,15 +1,15 @@
 <?php
 
 	class db{
-		private $HOST = 'localhost';
-		private $USER = 'micael';
-		private $PASS =	'22setembro';
-		private $DB   =	'assistec';
+		private $host = 'localhost';
+		private $user = 'micael';
+		private $pass =	'22setembro';
+		private $db   =	'assistec';
 
 
 		public function conectar(){
-			$conexao_mysql = "mysql:host=$this->HOST;dbname=$this->DB";
-			$conexaoDB = new PDO($conexao_mysql, $this->USER, $this->PASS);
+			$conexao_mysql = "mysql:host=$this->host;dbname=$this->db";
+			$conexaoDB = new PDO($conexao_mysql, $this->user, $this->pass);
 			$conexaoDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
