@@ -33,6 +33,41 @@ $app->get('/api/clientes', function(Request $request, Response $response){
 });
 
 
+
+
+$app->get('/api/dadosempresa', function(Request $request, Response $response){
+
+
+
+
+	try {
+		
+	$consulta = 'SELECT * FROM dadosempresa';
+		$db = new db();
+
+		$db = $db->conectar();
+		$executar = $db->query($consulta);
+		$clientes = $executar->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+		echo json_encode($clientes);
+
+
+
+	} catch (PDOException $e) {
+		echo '{"error": {"text": '.$e->getMessage().'}';
+
+	}
+
+});
+
+
+
+
+
+
+
+
+
 $app->post('/api/cadcliente', function(Request $request, Response $response){
 
 	$nome  = $request->getParam('nome');
@@ -63,3 +98,5 @@ $consulta = 'INSERT INTO usuario (nome,senha,token) VALUES(:nome, :senha, :token
 	}
 
 });
+
+
